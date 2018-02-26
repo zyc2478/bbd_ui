@@ -24,7 +24,6 @@ const actions = {
     changeStudentQueryFlagAction ({commit}, payload){
         commit('changeStudentQueryFlagMutation', payload)
     },
-
 }
 
 //mutations，真正用来修改state的方法集

@@ -3,7 +3,7 @@
         <div style="background-color:#20A0FF;padding:5px;color:white;overflow:hidden;border-radius:5px 5px 0 0">
             <span class="demonstration" style="float:left;padding:5px">学生资料</span>
         </div>
-
+        
         <div style="margin:1%">
             <el-table
                     :data="tableData"
