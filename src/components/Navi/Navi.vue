@@ -1,5 +1,5 @@
 <template>
-    <div style="background-color: #EBEBEB;min-height:800px">
+    <div style="background-color: #EBEBEB;min-height:900px">
         <div style="width:100%;background-color: #636363; overflow: hidden">
             <span class="demonstration" style="float:left;padding-top:10px;color:white;margin-left:1%">
                 网站首页
@@ -29,7 +29,7 @@
             <el-row :gutter="10">
                 <el-col :xs="4" :sm="4" :md="4" :lg="4">
                     <div>
-                        <el-menu default-active="1" class="el-menu-vertical-demo" style="min-height:800px" @select="handleSelect">
+                        <el-menu default-active="1" class="el-menu-vertical-demo" style="min-height:900px" @select="handleSelect">
                             <el-menu-item index="1"><i class="el-icon-message"></i>导航一</el-menu-item>
                             <el-menu-item index="2"><i class="el-icon-menu"></i>导航二</el-menu-item>
                             <el-menu-item index="3"><i class="el-icon-setting"></i>导航三</el-menu-item>
@@ -40,7 +40,7 @@
                     <div>
                         <div style="border: 1px solid #A6A6A6; border-radius:6px; padding:5px; margin:2px; background-color: white">
                             <el-breadcrumb separator="/">
-                                <el-breadcrumb-item v-for="item in breadcrumbItems" :key="bread-path">{{item}}</el-breadcrumb-item>
+                                <el-breadcrumb-item v-for="item in breadcrumbItems" :key="bread">{{item}}</el-breadcrumb-item>
                             </el-breadcrumb>
                         </div>
                     </div>
@@ -54,6 +54,7 @@
     </div>
 </template>
 <script type="text/ecmascript-6">
+    import { mapActions } from 'vuex'
     export default {
         data(){
             return {
@@ -84,6 +85,25 @@
                 }
             },
 
+            ...mapActions({
+                initStudentType: 'changeStudentTypeListAction'
+            }),
+
         },
+
+        created(){
+            this.initStudentType(
+                [
+                    {
+                        typeId: 0,
+                        typeName: '文科'
+                    },
+                    {
+                        typeId: 1,
+                        typeName: '理科'
+                    },
+                ]
+            );
+        }
     }
 </script>
