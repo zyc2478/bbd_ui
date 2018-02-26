@@ -23,7 +23,7 @@ yarn
 # serve with hot reload at localhost:8010
 npm run dev
 ```
-test commit
+
 ## Build
 
 ``` bash
